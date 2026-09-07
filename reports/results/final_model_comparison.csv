@@ -1,0 +1,5 @@
+model,accuracy,f1,recall
+Incremental Gaussian NB,0.7143,0.5125,0.4539
+Adaptive Gaussian NB,0.7162,0.5161,0.4595
+Windowed KNN,0.6973,0.6139,0.5967
+Adaptive Windowed KNN,0.6972,0.614,0.597
