@@ -1,0 +1,2 @@
+model,batches_evaluated,adaptation_events,mean_batch_accuracy,mean_batch_f1,mean_batch_recall
+Adaptive Windowed KNN,90,1,0.6971603988603988,0.6139629351484115,0.5970008922453534

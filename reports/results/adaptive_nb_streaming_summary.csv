@@ -1,0 +1,2 @@
+model,batches_evaluated,adaptation_events,mean_batch_accuracy,mean_batch_f1,mean_batch_recall
+Adaptive Gaussian NB,90,1,0.716182905982906,0.5161475993879752,0.45945542813947393
