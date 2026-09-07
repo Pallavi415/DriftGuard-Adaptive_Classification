@@ -1,0 +1,4 @@
+parameter,value
+total_observations,45312
+batch_size,500
+number_of_batches,91
