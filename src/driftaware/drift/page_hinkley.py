@@ -16,6 +16,14 @@ class PageHinkley:
         self.cumulative_sum = 0.0
         self.minimum_sum = 0.0
 
+    # Reset the detector after a change has been detected
+    def reset(self):
+        # Start a new detection period
+        self.count = 0
+        self.mean = 0.0
+        self.cumulative_sum = 0.0
+        self.minimum_sum = 0.0
+
     # Update the detector with one new observation
     def update(self, value):
         # Convert the incoming value to a float
@@ -27,7 +35,7 @@ class PageHinkley:
         # Update the running mean
         self.mean += (value - self.mean) / self.count
 
-        # Update the cumulative deviation from the running mean
+        # Update the cumulative deviation
         self.cumulative_sum += value - self.mean - self.delta
 
         # Track the minimum cumulative value
@@ -36,12 +44,17 @@ class PageHinkley:
             self.cumulative_sum
         )
 
-        # Calculate the current deviation from the minimum
+        # Measure the deviation from the minimum
         deviation = self.cumulative_sum - self.minimum_sum
 
         # Check whether the deviation exceeds the threshold
         if deviation > self.threshold:
+
+            # Reset the detector so it can identify a future change
+            self.reset()
+
+            # Report that a change was detected
             return True
 
-        # Return False when no change is detected
+        # Report that no change was detected
         return False
